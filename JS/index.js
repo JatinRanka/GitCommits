@@ -14,11 +14,6 @@ function userrepo(user){
             
             listofrep = document.getElementById("listofrepo")
             
-//            console.log(data[i].name)
-//            console.log(data[i].stargazers_count)
-//            console.log(data[i].language)
-//            console.log(data[i].forks_count)
-//            console.log(data[i].description)
             
             listofrep.innerHTML = "Repositories are been listed below. Click on them to check its fruitful commits."
             
@@ -91,9 +86,7 @@ function clicked(id){
         
         $.getJSON("https://api.github.com/repos/"+user+"/"+name+"/branches")
         .done(function(data1){
-            
-            
-            
+   
             
             var j;
             var c=0;
@@ -158,7 +151,7 @@ function display(c,c2,l,l2,id){
     displayid = document.getElementById(id);
     displayid.innerHTML = "There are "+c+" improper commits and "+c2+" proper commits.";
     displayid.innerHTML+="<br><br>"
-    if((c*4)<=c2){
+    if((c*2)<=c2){
         displayid.innerHTML+="It is a good Repository. Maintain it the same way:)";
     }
     else{
@@ -167,11 +160,6 @@ function display(c,c2,l,l2,id){
     displayid.innerHTML+="<br><br>"
     displayid.innerHTML+="<a href='home.html' type='button' class='searchBtn btn btn-info'>Check All Commits</a>"
 }
-
-
-
-
-
 
 
 
